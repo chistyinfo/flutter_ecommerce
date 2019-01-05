@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_pro/carousel_pro.dart';
+import 'package:flutter_ecommerce/components/horizontal.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -14,8 +16,27 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    //Slider of carousel libray
+    Widget image_carousel = Container(
+      height: 200.0,
+      child: Carousel(
+        boxFit: BoxFit.cover,
+        images: [
+          AssetImage('images/blazer1.jpeg'),
+          AssetImage('images/blazer2.jpeg'),
+          AssetImage('images/dress.png')
+        ],
+        autoplay: true,
+        animationCurve: Curves.fastOutSlowIn,
+        animationDuration: Duration(microseconds: 1000),
+        dotSize: 4.0,
+        indicatorBgPadding: 4.0,
+        dotColor: Colors.red,
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
+        elevation: 1.0,
         backgroundColor: Colors.red,
         title: Text('FashApp'),
         //Tab icon
@@ -47,7 +68,7 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(color: Colors.red),
             ),
             InkWell(
-              onTap:() {},
+              onTap: () {},
               //Drawer body
               child: ListTile(
                 title: Text('Home Page'),
@@ -55,7 +76,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap:() {},
+              onTap: () {},
               //Drawer body
               child: ListTile(
                 title: Text('My Account'),
@@ -63,7 +84,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap:() {},
+              onTap: () {},
               //Drawer body
               child: ListTile(
                 title: Text('My Order'),
@@ -71,7 +92,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap:() {},
+              onTap: () {},
               //Drawer body
               child: ListTile(
                 title: Text('Categories'),
@@ -79,7 +100,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap:() {},
+              onTap: () {},
               //Drawer body
               child: ListTile(
                 title: Text('Favourites'),
@@ -88,23 +109,36 @@ class _HomePageState extends State<HomePage> {
             ),
             Divider(),
             InkWell(
-              onTap:() {},
+              onTap: () {},
               //Drawer body
               child: ListTile(
                 title: Text('Settings'),
-                leading: Icon(Icons.settings),
+                leading: Icon(Icons.settings, color: Colors.blue),
               ),
             ),
             InkWell(
-              onTap:() {},
+              onTap: () {},
               //Drawer body
               child: ListTile(
                 title: Text('About'),
-                leading: Icon(Icons.help),
+                leading: Icon(
+                  Icons.help,
+                  color: Colors.green,
+                ),
               ),
             ),
           ],
         ),
+      ),
+      body: ListView(
+        children: <Widget>[
+          //Image Slider
+          image_carousel,
+          Padding(padding: const EdgeInsets.all(2.0),
+          child: Text('Categories'),),
+          //Horizontal listview
+          HorizontalList()
+        ],
       ),
     );
   }
