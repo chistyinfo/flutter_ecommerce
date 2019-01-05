@@ -38,10 +38,71 @@ class _HomePageState extends State<HomePage> {
               currentAccountPicture: GestureDetector(
                 child: CircleAvatar(
                   backgroundColor: Colors.grey,
-                  child: Icon(Icons.person,color: Colors.white,),
+                  child: Icon(
+                    Icons.person,
+                    color: Colors.white,
+                  ),
                 ),
               ),
-            )
+              decoration: BoxDecoration(color: Colors.red),
+            ),
+            InkWell(
+              onTap:() {},
+              //Drawer body
+              child: ListTile(
+                title: Text('Home Page'),
+                leading: Icon(Icons.home),
+              ),
+            ),
+            InkWell(
+              onTap:() {},
+              //Drawer body
+              child: ListTile(
+                title: Text('My Account'),
+                leading: Icon(Icons.person),
+              ),
+            ),
+            InkWell(
+              onTap:() {},
+              //Drawer body
+              child: ListTile(
+                title: Text('My Order'),
+                leading: Icon(Icons.shopping_basket),
+              ),
+            ),
+            InkWell(
+              onTap:() {},
+              //Drawer body
+              child: ListTile(
+                title: Text('Categories'),
+                leading: Icon(Icons.dashboard),
+              ),
+            ),
+            InkWell(
+              onTap:() {},
+              //Drawer body
+              child: ListTile(
+                title: Text('Favourites'),
+                leading: Icon(Icons.favorite),
+              ),
+            ),
+            Divider(),
+            InkWell(
+              onTap:() {},
+              //Drawer body
+              child: ListTile(
+                title: Text('Settings'),
+                leading: Icon(Icons.settings),
+              ),
+            ),
+            InkWell(
+              onTap:() {},
+              //Drawer body
+              child: ListTile(
+                title: Text('About'),
+                leading: Icon(Icons.help),
+              ),
+            ),
           ],
         ),
       ),
