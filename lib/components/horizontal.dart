@@ -8,6 +8,7 @@ class HorizontalList extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
+          // Category Constractor is called here
           Category(image_location: 'images/tshirt.png', image_caption: 'Shirt'),
           Category(image_location: 'images/tshirt.png', image_caption: 'Shirt'),
           Category(image_location: 'images/tshirt.png', image_caption: 'Shirt'),

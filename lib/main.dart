@@ -137,13 +137,14 @@ class _HomePageState extends State<HomePage> {
           image_carousel,
           Padding(padding: const EdgeInsets.all(2.0),
           child: Text('Categories'),),
-          //Horizontal listview
+          //Horizontal class is called here
           HorizontalList(),
           Padding(padding: const EdgeInsets.all(4.0),
           child: Text('Recent Products'),),
           //Grid view
           Container(
             height: 320.0,
+            //Product class is called here
             child: Products(),
           )
         ],

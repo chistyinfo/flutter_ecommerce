@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ecommerce/pages/product_details.dart';
 
+
+
+
 class Products extends StatefulWidget {
   _ProductsState createState() => _ProductsState();
 }
@@ -14,7 +17,7 @@ class _ProductsState extends State<Products> {
       "price": 100,
     },
     {
-      "name": "Blazer",
+      "name": "Tshirt",
       "picture": "images/blazer2.jpeg",
       "old_price": 110,
       "price": 90,
@@ -28,6 +31,7 @@ class _ProductsState extends State<Products> {
       gridDelegate:
           SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemBuilder: (BuildContext contex, int index) {
+        //Constractor is called here
         return Single_Prod(
           prod_name: product_list[index]['name'],
           prod_picture: product_list[index]['picture'],
@@ -58,7 +62,16 @@ class Single_Prod extends StatelessWidget {
         tag: prod_name,
         child: Material(
           child: InkWell(
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => ProductDetails())),
+            onTap:(){
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => ProductDetails(
+                  product_details_name: prod_name,
+                  product_details_newprice:prod_price,
+                  product_details_oldprice: prod_old_price,
+                  product_picture: prod_picture,
+                )));
+            },
+          
             child: GridTile(
               footer: Container(
                 color: Colors.white70,
