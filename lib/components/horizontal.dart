@@ -9,12 +9,11 @@ class HorizontalList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         children: <Widget>[
           // Category Constractor is called here
-          Category(image_location: 'images/tshirt.png', image_caption: 'Shirt'),
-          Category(image_location: 'images/tshirt.png', image_caption: 'Shirt'),
-          Category(image_location: 'images/tshirt.png', image_caption: 'Shirt'),
-          Category(image_location: 'images/tshirt.png', image_caption: 'Shirt'),
-          Category(image_location: 'images/tshirt.png', image_caption: 'Shirt'),
-          Category(image_location: 'images/tshirt.png', image_caption: 'Shirt'),
+          Category(image_location: 'images/tshirt.png', image_caption: ' ফুল'),
+          Category(image_location: 'images/tshirt.png', image_caption: 'বিয়ে'),
+          Category(image_location: 'images/tshirt.png', image_caption: 'হলুদ'),
+          Category(image_location: 'images/tshirt.png', image_caption: 'জম্মদিন'),
+          Category(image_location: 'images/tshirt.png', image_caption: 'অফিস')
         ],
       ),
     );

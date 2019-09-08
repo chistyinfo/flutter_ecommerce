@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
+import '../main.dart';
+
 class ProductDetails extends StatefulWidget {
   final product_details_name;
   final product_details_newprice;
-  final product_details_oldprice;
+  // final product_details_oldprice;
   final product_picture;
 
+  //constractor
   ProductDetails(
       {this.product_details_name,
       this.product_details_newprice,
-      this.product_details_oldprice,
+      // this.product_details_oldprice,
       this.product_picture});
+
   _ProductDetailsState createState() => _ProductDetailsState();
 }
 
@@ -20,8 +24,12 @@ class _ProductDetailsState extends State<ProductDetails> {
     return Scaffold(
       appBar: AppBar(
         elevation: 1.0,
-        backgroundColor: Colors.red,
-        title: Text('FashApp'),
+        backgroundColor: Colors.purpleAccent,
+        title: InkWell(
+          onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));},
+          child: Text('ফুলেল'),
+        ),
+        
         //Tab icon
         actions: <Widget>[
           IconButton(
@@ -51,14 +59,14 @@ class _ProductDetailsState extends State<ProductDetails> {
                   ),
                   title: Row(
                     children: <Widget>[
-                      Expanded(
-                        child: Text(
-                          "\$${widget.product_details_oldprice}",
-                          style: TextStyle(
-                              color: Colors.grey,
-                              decoration: TextDecoration.lineThrough),
-                        ),
-                      ),
+                      // Expanded(
+                      //   child: Text(
+                      //     "\$${widget.product_details_newprice}",
+                      //     style: TextStyle(
+                      //         color: Colors.grey,
+                      //         decoration: TextDecoration.lineThrough),
+                      //   ),
+                      // ),
                       Expanded(
                         child: Text(
                           "\$${widget.product_details_newprice}",
@@ -177,7 +185,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   color: Colors.red,
                   textColor: Colors.white,
                   elevation: 2.0,
-                  child: Text("Buy"),
+                  child: Text("কল করুন "),
                 ),
               ),
               IconButton(
@@ -198,7 +206,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           ),
           Divider(),
           ListTile(
-            title: Text("Product details"),
+            title: Text("বিস্তারিত"),
             subtitle: Text("White single-breasted blazer, has a notched lapel, a full button placket, long sleeves, three welt pockets, a double-vented back hem\n"),
           ),
           Divider(),

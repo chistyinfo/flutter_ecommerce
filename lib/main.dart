@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter_ecommerce/components/horizontal.dart';
 import 'package:flutter_ecommerce/components/product.dart';
+import 'package:flutter_ecommerce/pages/cart.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -25,28 +26,32 @@ class _HomePageState extends State<HomePage> {
         images: [
           AssetImage('images/blazer1.jpeg'),
           AssetImage('images/blazer2.jpeg'),
+          AssetImage('images/accessories.png'),
           AssetImage('images/dress.png')
         ],
         autoplay: true,
         animationCurve: Curves.fastOutSlowIn,
         animationDuration: Duration(microseconds: 1000),
-        dotSize: 4.0,
+        dotSize: 6.0,
         indicatorBgPadding: 4.0,
-        dotColor: Colors.red,
+        dotColor: Colors.black,
       ),
     );
     return Scaffold(
       appBar: AppBar(
         elevation: 1.0,
-        backgroundColor: Colors.red,
-        title: Text('FashApp'),
+        backgroundColor: Colors.purpleAccent,
+        title: Text('ফুলেল'),
+        
         //Tab icon
         actions: <Widget>[
           IconButton(
               icon: Icon(Icons.search, color: Colors.white), onPressed: () {}),
           IconButton(
             icon: Icon(Icons.shopping_cart, color: Colors.white),
-            onPressed: () {},
+            onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>Cart()));
+            },
           )
         ],
       ),
@@ -72,7 +77,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () {},
               //Drawer body
               child: ListTile(
-                title: Text('Home Page'),
+                title: Text(' হোম পেইজ'),
                 leading: Icon(Icons.home),
               ),
             ),
@@ -136,14 +141,14 @@ class _HomePageState extends State<HomePage> {
           //Image Slider
           image_carousel,
           Padding(padding: const EdgeInsets.all(2.0),
-          child: Text('Categories'),),
+          child: Text('ক্যাটাগরি '),),
           //Horizontal class is called here
           HorizontalList(),
           Padding(padding: const EdgeInsets.all(4.0),
-          child: Text('Recent Products'),),
+          child: Text('আমাদের সেবা সমূহ '),),
           //Grid view
           Container(
-            height: 320.0,
+            height: 300.0,
             //Product class is called here
             child: Products(),
           )
