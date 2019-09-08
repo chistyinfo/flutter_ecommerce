@@ -97,6 +97,16 @@ class _HomePageState extends State<HomePage> {
                 leading: Icon(Icons.shopping_basket),
               ),
             ),
+             InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder:(context)=>Cart()));
+              },
+              //Drawer body
+              child: ListTile(
+                title: Text('Cart'),
+                leading: Icon(Icons.shopping_cart),
+              ),
+            ),
             InkWell(
               onTap: () {},
               //Drawer body
