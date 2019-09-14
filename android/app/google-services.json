@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "226402710540",
+    "firebase_url": "https://fhulel.firebaseio.com",
+    "project_id": "fhulel",
+    "storage_bucket": "fhulel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:226402710540:android:ece701abda1f76ce09aa29",
+        "android_client_info": {
+          "package_name": "com.example.flutterecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "226402710540-h2kcrrrmbi890ebpfnuhhb5ahkqus79i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutterecommerce",
+            "certificate_hash": "b80222b9cca8043849ee458e429ebc4f3e953d83"
+          }
+        },
+        {
+          "client_id": "226402710540-f0nc8pfngee586k1936tvq94u44quvea.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc7a7kB185AV_TBdYcXdz7FaorVERaHfY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "226402710540-f0nc8pfngee586k1936tvq94u44quvea.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

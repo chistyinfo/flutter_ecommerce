@@ -60,11 +60,14 @@ class _ProductsState extends State<Products> {
           SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemBuilder: (BuildContext contex, int index) {
         //Constractor is called here
-        return Single_Prod(
-          prod_name: product_list[index]['name'],
-          prod_picture: product_list[index]['picture'],
-          // prod_old_price: product_list[index]['old_price'],
-          prod_price: product_list[index]['price'],
+        return Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Single_Prod(
+            prod_name: product_list[index]['name'],
+            prod_picture: product_list[index]['picture'],
+            // prod_old_price: product_list[index]['old_price'],
+            prod_price: product_list[index]['price'],
+          ),
         );
       },
     );

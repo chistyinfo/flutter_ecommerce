@@ -35,7 +35,7 @@ class _Cart_productsState extends State<Cart_products> {
           cart_prod_price: Products_on_the_cart[index]["price"],
           cart_prod_picture: Products_on_the_cart[index]["picture"],
           cart_prod_size: Products_on_the_cart[index]["size"],
-          cart_prod_qty: Products_on_the_cart[index]["Qnt"],
+          cart_prod_qty: Products_on_the_cart[index]["quantity"],
         );
       },
     );
@@ -61,56 +61,58 @@ class Single_Cart_product extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: ListTile(
-        //==========Leading Section ==================      
-        leading: Image.asset(cart_prod_picture,width: 100.0,height: 80.0,),
+      child: Flexible(
+              child: ListTile(
+          //==========Leading Section ==================      
+          leading: Image.asset(cart_prod_picture,width: 100.0,height: 80.0,),
 
-        //==========Title Section=========
-        title: Text(cart_prod_name),
+          //==========Title Section=========
+          title: Text(cart_prod_name),
 
-        //==========SubTitle Section=========
-        subtitle: Column(
-          children: <Widget>[
-            Row(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.all(0.0),
-                  child: Text('Size:'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(cart_prod_size),
-                ),
-                //========This section of for the product color =============
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20.0, 8.0, 8.0, 8.0),
-                  child: new Text('Color'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Text(
-                    cart_prod_color,
-                    style: TextStyle(color: Colors.red),
+          //==========SubTitle Section=========
+          subtitle: Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(0.0),
+                    child: Text('Size'),
                   ),
-                )
-              ],
-            ),
-            //================ This Section is for the Product Price=================
-            Container(
-              alignment: Alignment.topLeft,
-              child: Text(
-                "\$${cart_prod_price}",
-                style: TextStyle(fontSize: 17.0,fontWeight: FontWeight.bold),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(cart_prod_size),
+                  ),
+                  //========This section of for the product color =============
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20.0, 8.0, 8.0, 8.0),
+                    child: new Text('Color'),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Text(
+                      cart_prod_color,
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  )
+                ],
               ),
-            )
-          ],
-        ),
-        trailing: Column(
-          children: <Widget>[
-            IconButton(icon: Icon(Icons.arrow_drop_up),onPressed: (){}),
-            Text(cart_prod_qty),
-            IconButton(icon: Icon(Icons.arrow_drop_down),onPressed: (){})
-          ],
+              //================ This Section is for the Product Price=================
+              Container(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "\$${cart_prod_price}",
+                  style: TextStyle(fontSize: 17.0,fontWeight: FontWeight.bold),
+                ),
+              )
+            ],
+          ),
+          trailing: Column(
+            children: <Widget>[
+              IconButton(icon: Icon(Icons.arrow_drop_up),onPressed: (){}),
+              Text(cart_prod_qty),
+              IconButton(icon: Icon(Icons.arrow_drop_down),onPressed: (){})
+            ],
+          ),
         ),
       ),
     );

@@ -146,22 +146,26 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: ListView(
+      body: Column(
         children: <Widget>[
           //Image Slider
           image_carousel,
-          Padding(padding: const EdgeInsets.all(2.0),
-          child: Text('ক্যাটাগরি '),),
+
+          Padding(padding: const EdgeInsets.all(4.0),
+          child: Container(
+            alignment: Alignment.centerLeft,
+            child: Text('ক্যাটাগরি ')),),
+
           //Horizontal class is called here
           HorizontalList(),
-          Padding(padding: const EdgeInsets.all(4.0),
-          child: Text('আমাদের সেবা সমূহ '),),
+          Padding(padding: const EdgeInsets.all(8.0),
+          child: Container(
+            alignment: Alignment.centerLeft,
+             child:Text('আমাদের সেবা সমূহ ')),),
           //Grid view
-          Container(
-            height: 300.0,
-            //Product class is called here
-            child: Products(),
-          )
+        
+           Flexible(child: Products()),
+         
         ],
       ),
     );
